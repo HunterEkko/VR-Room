@@ -48,11 +48,11 @@ public class OnVelocity : MonoBehaviour
     {
         if (hasBegun)
             return true;
-
+        Debug.Log(speed);
         bool beginCheck = speed > beginThreshold;
 
         if (beginCheck)
-            OnBegin.Invoke(this);    
+            OnBegin.Invoke(this);
 
         return beginCheck;
     }

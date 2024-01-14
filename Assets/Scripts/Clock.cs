@@ -32,7 +32,7 @@ public class Clock : MonoBehaviour
             {
                 hourObj.transform.Rotate(Vector3.up, 0.5f);
             }
-            Debug.Log(DateTime.Now.TimeOfDay);
+            // Debug.Log(DateTime.Now.TimeOfDay);
         }
     }
 }
