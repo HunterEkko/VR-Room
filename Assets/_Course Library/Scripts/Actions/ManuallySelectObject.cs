@@ -20,6 +20,7 @@ public class ManuallySelectObject : MonoBehaviour
         interactor = GetComponent<XRBaseControllerInteractor>();
         interactionManager = interactor.interactionManager;
         originalTriggerType = interactor.selectActionTrigger;
+        ManuallySelect();
     }
 
     public void ManuallySelect()
@@ -31,8 +32,8 @@ public class ManuallySelectObject : MonoBehaviour
 
     public void ManuallyDeselect()
     {
-        interactionManager.SelectExit(interactor as IXRSelectInteractor, interactable);
-        interactor.selectActionTrigger = originalTriggerType;
         interactable.gameObject.SetActive(false);
+        interactor.selectActionTrigger = originalTriggerType;
+        interactionManager.SelectExit(interactor as IXRSelectInteractor, interactable);
     }
 }
